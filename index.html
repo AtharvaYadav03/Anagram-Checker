@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>
+            Anagram Checker
+
+        </title>
+        <style>
+            *{font-size: 50px;}
+            body{background-color: rgb(255, 0, 98);}
+        </style>
+
+    </head>
+    <body>
+        <center>
+            <h1>  Anagram Checker</h1>
+            <form onsubmit= "Check()">
+                <input type="text"   id="string1"  placeholder="enter a  first string"/>
+                <br/><br/>
+                <input type="text"   id="string2"  placeholder="enter a  second string"/>
+                <br/><br/>
+                <input type="submit"  value="Check"/>
+            </form>
+            <h2 id="msg"/>
+
+        <script>
+            function Check()
+            {
+                event.preventDefault();
+                let string1=document.getElementById("string1");
+                let string2=document.getElementById("string2");
+                let msg=document.getElementById("msg");
+
+                if(string1.value==="")
+            {
+                alert("string1 is empty");
+                msg.innerHTML="";
+                string1.focus();
+                return;
+
+
+            }
+            if(string2.value==="")
+            {
+                alert("string2 is empty");
+                msg.innerHTML="";
+                string2.focus();
+                return;
+
+
+            }
+            org_string1=string1.value;
+            org_string2=string2.value;
+            sort_string1=org_string1.split("").sort().join("");
+            sort_string2=org_string2.split("").sort().join("");
+            
+            if(sort_string1===sort_string2){
+                msg.innerHTML="it is a Anagram "
+            }
+            else{
+                msg.innerHTML="it is not  a Anagram "
+            }
+
+           
+
+            
+
+
+
+
+
+            }
+
+
+
+
+
+
+        </script>
+        </center>
+
+
+    </body>
+    
+
+
+</html>
